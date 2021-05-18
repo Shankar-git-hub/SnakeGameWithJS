@@ -1,10 +1,10 @@
 // Game constants and variables
 
 let inputDir = { x: 0, y: 0 };
-const foodSound = new Audio("food.mp3");
-const gameOverSound = new Audio("gameover.mp3");
-const moveSound = new Audio("move.mp3");
-const backgroundMusic = new Audio("music.mp3");
+const foodSound = new Audio("Assets/music/food.mp3");
+const gameOverSound = new Audio("Assets/music/gameover.mp3");
+const moveSound = new Audio("Assets/music/move.mp3");
+const backgroundMusic = new Audio("Assets/music/music.mp3");
 let lastPaintTime = 0;
 let score = 0;
 let speed = 5;
@@ -21,8 +21,20 @@ const main = function (ctime) {
   gameEngine();
 };
 
-const isCollide = function (sarr) {
-  return false;
+const isCollide = function (snake) {
+  for (let i = 1; i < snakeArr.length; i++) {
+    if (snake[i].x == snake[0].x && snake[i].y == snake[0].y) {
+      return true;
+    }
+  }
+  if (
+    snake[0].x >= 18 ||
+    snake[0].x <= 0 ||
+    snake[0].y >= 18 ||
+    snake[0].y <= 0
+  ) {
+    return true;
+  }
 };
 
 const gameEngine = () => {

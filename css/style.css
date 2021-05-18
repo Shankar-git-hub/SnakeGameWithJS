@@ -21,11 +21,16 @@
   grid-template-columns: repeat(18, 1fr);
 }
 .head {
-  background-color: Red;
+  background: linear-gradient(black, blue);
+  border: 2px blue;
+  border-radius: 8px;
 }
 .snake {
-  background-color: purple;
+  background: linear-gradient(brown, black);
+  border: 2px blue;
+  border-radius: 10px;
 }
 .food {
   background-color: yellow;
+  border: 2px black;
 }
